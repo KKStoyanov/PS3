@@ -12,24 +12,41 @@ public class Book {
 	private String author;
 	private String title;
 	private String genre;
+	private double cost;
 	private double price;
 	private Date publish_date;
 	private String description;
 
-	public Book() {
-
+	public Book(){
+		
 	}
 
 	public Book(String id, String author, String title, String genre, double price, Date publish_date, String description)
 	{
-		super();
+		//super();
 		this.id = id;
 		this.author = author;
 		this.title = title;
-		this.genre = genre;		
+		this.genre = genre;
 		this.price = price;
 		this.publish_date = publish_date;
 		this.description = description;
+	}
+	
+	public Book(Catalog cat, String id, String author, String title, String genre, double price, Date publish_date, String description) {
+		this(id, author, title, genre, price, publish_date, description);
+		for(Book b: cat.getBooks()){
+			if (b.getId() == id){
+				this.id = b.getId();
+				this.author = b.getAuthor();
+				this.title = b.getTitle();
+				this.genre = b.getGenre();
+				this.price = b.getPrice();
+				this.publish_date = b.getPublish_date();
+				this.description = b.getDescription();
+				
+			}
+		}
 	}
 	
  
@@ -95,6 +112,15 @@ public class Book {
 	@XmlElement
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public double getCost() {
+		return cost;
+	}
+
+	@XmlElement
+	public void setCost(double cost) {
+		this.cost = cost;
 	}
 
 	

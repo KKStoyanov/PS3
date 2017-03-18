@@ -70,6 +70,7 @@ public class XMLXPath {
 				System.out.println(b.getAuthor());
 				System.out.println(b.getGenre());
 				System.out.println(b.getTitle());
+				System.out.println(b.getCost());
 				System.out.println(b.getPrice());
 				System.out.println(b.getPublish_date());
 				System.out.println(b.getDescription());
