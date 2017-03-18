@@ -6,7 +6,7 @@ public class BookException2 extends Exception {
 
 	public BookException2(Book book) {
 		this.book = book;
-		System.out.println(book + " is already in the catalog.");
+		System.out.println(book.getId() + " is already in the catalog.");
 	}
 
 }
